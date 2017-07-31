@@ -1,0 +1,20 @@
+{
+  "name": "hexo-cloudinary",
+  "version": "0.0.1",
+  "description": "Hexo tag to add an image from cloudinary",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maliMirkec/hexo-cloudinary"
+  },
+  "keywords": ["hexo", "plugin", "tag", "cloudinary", "maliMirkec"],
+  "author": "maliMirkec <malimirkeccita@gmail.com> (https://www.silvestarbistrovic.from.hr)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maliMirkec/hexo-cloudinary/issues"
+  },
+  "homepage": "https://github.com/maliMirkec/hexo-cloudinary"
+}
