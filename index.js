@@ -1,51 +1,53 @@
-// {% cloudinary src true|false [class, alt] %}
+// {% cloudinary src false|sizes [alt] [class] %}
 function cloudinaryTagRender(args) {
   if (!args[0]) {
     return "";
   }
 
   const imgSrc = args[0];
-  const imgIsResponsive = args[1];
-  const imgClass = args[2].class;
-  const imgAlt = args[2].alt;
+  const imgSizes = args[1] || "false";
+  const imgAlt = args[2] || "";
+  const imgClass = args[3] || "";
 
-  if (imgIsResponsive === "true" && theme.cloudinary.sizes) {
-    let imgSrcset = "";
-    let imgSizes = "";
-    let iterator = 1;
-    let sizesLength = theme.cloudinary.sizes.length;
-
-    for (let size in theme.cloudinary.sizes) {
-      let size = theme.cloudinary.sizes[i];
-      let currentImgSrc = imgSrc.replace(
-        "upload/",
-        "upload/" + theme.cloudinary.sizes[size] + "/"
-      );
-      let separator = iterator === sizesLength ? "" : ", ";
-      let mediaQuery = iterator === sizesLength ? "" : "(may-width: )" + size;
-
-      imgSrcset += currentImgSrc + " " + size + separator;
-      imgSizes += mediaQuery + " " + size + separator;
-
-      iterator++;
-    }
-
+  if (imgSizes === "false") {
     return (
-      '<img src="' +
+      '<p><img src="' +
       imgSrc +
       '" class="' +
       imgClass +
       '" alt="' +
       imgAlt +
-      '" srcset="' +
-      imgSrcset +
-      '" sizes="' +
-      imgSizes +
-      '">'
+      '"></p>'
     );
   } else {
+    let currentImgSrcset = "";
+    let currentImgSizes = "";
+    let currentImgSrc = "";
+    let sizes = imgSizes.split(";");
+
+    for (let i = 0; i < sizes.length; i++) {
+      const size = sizes[i].split("=");
+      currentImgSrc = imgSrc.replace("upload/", "upload/" + size[1] + "/");
+      const separator = i + 1 === sizes.length ? "" : ", ";
+      const mediaQuery =
+        i + 1 === sizes.length ? "" : "(max-width:" + size[0] + ")";
+      currentImgSrcset +=
+        currentImgSrc + " " + size[0].replace("px", "w") + separator;
+      currentImgSizes += mediaQuery + " " + size[0] + separator;
+    }
+
     return (
-      '<img src="' + imgSrc + '" class="' + imgClass + '" alt="' + imgAlt + '">'
+      '<p><img src="' +
+      currentImgSrc +
+      '" class="' +
+      imgClass +
+      '" alt="' +
+      imgAlt +
+      '" srcset="' +
+      currentImgSrcset +
+      '" sizes="' +
+      currentImgSizes +
+      '"></p>'
     );
   }
 }
