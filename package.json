@@ -1,7 +1,7 @@
 {
   "name": "hexo-cloudinary",
   "version": "0.1.2",
-  "description": "Hexo tag to add an image from cloudinary",
+  "description": "Hexo tag to add an image from cloudinary - with srcset support",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
