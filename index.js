@@ -11,12 +11,12 @@ function cloudinaryTagRender(args) {
 
   if (imgSizes === "false") {
     return (
-      '<p><img src="' +
-      imgSrc +
-      '" class="' +
+      '<p><img class="' +
       imgClass +
       '" alt="' +
       imgAlt +
+      '" src="' +
+      imgSrc +
       '"></p>'
     );
   } else {
@@ -37,12 +37,12 @@ function cloudinaryTagRender(args) {
     }
 
     return (
-      '<p><img src="' +
-      currentImgSrc +
-      '" class="' +
+      '<p><img class="' +
       imgClass +
       '" alt="' +
       imgAlt +
+      '" src="' +
+      currentImgSrc +
       '" srcset="' +
       currentImgSrcset +
       '" sizes="' +
