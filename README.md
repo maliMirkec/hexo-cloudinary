@@ -1,7 +1,7 @@
 hexo-cloudinary [![NPM version][npm-image]][npm-url] [![Dependency Status][depstat-image]][depstat-url]
 ================
 
-> [Hexo] tag to add an image from [Cloudinary] (with [srcset] support)
+> [Hexo] tag to add an image from [Cloudinary] - with [srcset] support
 
 ## Install
 
