@@ -10,7 +10,7 @@ Install using [npm][npm-url].
 ```
 npm install hexo-cloudinary --save
 ```
-∏
+
 Install using [yarn][yarn-url].
 
 ```
