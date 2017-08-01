@@ -25,8 +25,9 @@ yarn add hexo-cloudinary
 
 where:
 - src - path to image
-| - srcset - false | srcset sizes in following format |
-| ---------------- |small_width=small_cloudinary_transformation_id;big_width=big_cloudinary_transformation_id
+- srcset - srcset sizes in following format
+  - small_width=small_cloudinary_transformation_id;big_width=big_cloudinary_transformation_id
+  - default false - no srcset
 - alt - image title (optional)
 - class - custom class (optional)
 
@@ -37,6 +38,7 @@ where:
 ```
 <img src="http://res.cloudinary.com/USER_NAME/image/upload/c_scale,q_auto:good,w_640/IMAGE_NAME.png" alt="My image title" srcset="http://res.cloudinary.com/USER_NAME/image/upload/c_scale,q_auto:good,w_320/IMAGE_NAME.png 320w, http://res.cloudinary.com/USER_NAME/image/upload/c_scale,q_auto:good,w_640/IMAGE_NAME.png 640w" sizes="(max-width:320px) 320px,  640px">
 ```
+
 ## License
 MIT
 
