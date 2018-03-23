@@ -8,17 +8,35 @@ function cloudinaryTagRender(args) {
   const imgSizes = args[1] || "false";
   const imgAlt = args[2] || "";
   const imgClass = args[3] || "";
+  const aHref = args[4] || "";
+  const aClass = args[5] || "";
 
   if (imgSizes === "false") {
-    return (
-      '<p><img class="' +
-      imgClass +
-      '" alt="' +
-      imgAlt +
-      '" src="' +
-      imgSrc +
-      '"></p>'
-    );
+    if (aHref !== "") {
+      return (
+        '<a href="' +
+        aHref +
+        '" class="' +
+        aClass +
+        '" ><img class="' +
+        imgClass +
+        '" alt="' +
+        imgAlt +
+        '" src="' +
+        imgSrc +
+        '"></a>'
+      );
+    } else {
+      return (
+        '<p><img class="' +
+        imgClass +
+        '" alt="' +
+        imgAlt +
+        '" src="' +
+        imgSrc +
+        '"></p>'
+      );
+    }
   } else {
     let currentImgSrcset = "";
     let currentImgSizes = "";
@@ -36,19 +54,39 @@ function cloudinaryTagRender(args) {
       currentImgSizes += mediaQuery + " " + size[0] + separator;
     }
 
-    return (
-      '<p><img class="' +
-      imgClass +
-      '" alt="' +
-      imgAlt +
-      '" src="' +
-      currentImgSrc +
-      '" srcset="' +
-      currentImgSrcset +
-      '" sizes="' +
-      currentImgSizes +
-      '"></p>'
-    );
+    if (aHref !== "") {
+      return (
+        '<a href="' +
+        aHref +
+        '" class="' +
+        aClass +
+        '" ><img class="' +
+        imgClass +
+        '" alt="' +
+        imgAlt +
+        '" src="' +
+        currentImgSrc +
+        '" srcset="' +
+        currentImgSrcset +
+        '" sizes="' +
+        currentImgSizes +
+        '"></a>'
+      );
+    } else {
+      return (
+        '<p><img class="' +
+        imgClass +
+        '" alt="' +
+        imgAlt +
+        '" src="' +
+        currentImgSrc +
+        '" srcset="' +
+        currentImgSrcset +
+        '" sizes="' +
+        currentImgSizes +
+        '"></p>'
+      );
+    }
   }
 }
 
