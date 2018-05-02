@@ -4,17 +4,28 @@
   "description": "Hexo tag to add an image from cloudinary - with srcset support",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/maliMirkec/hexo-cloudinary"
   },
-  "keywords": ["hexo", "plugin", "tag", "cloudinary", "maliMirkec"],
+  "keywords": [
+    "hexo",
+    "plugin",
+    "tag",
+    "cloudinary",
+    "maliMirkec"
+  ],
   "author": "maliMirkec <malimirkeccita@gmail.com> (https://www.silvestarbistrovic.from.hr)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/maliMirkec/hexo-cloudinary/issues"
   },
-  "homepage": "https://github.com/maliMirkec/hexo-cloudinary"
+  "homepage": "https://github.com/maliMirkec/hexo-cloudinary",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "cheerio": "^1.0.0-rc.2",
+    "mocha": "^5.1.1"
+  }
 }
